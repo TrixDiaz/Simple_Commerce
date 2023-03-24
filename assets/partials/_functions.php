@@ -4,7 +4,7 @@ function db_connect()
     $servername = 'localhost';
     $username = 'root';
     $password = '';
-    $database = 'test_admin_dashboard';
+    $database = 'test_admin';
 
     $conn = mysqli_connect($servername, $username, $password, $database);
     return $conn;
