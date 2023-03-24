@@ -15,17 +15,21 @@
 			if (!$select_db) {
 				die("Database Selection Failed" . mysqli_error($connection));
 			}
-		if (isset($_GET['product_newid']) 
-			and isset($_GET['product_newname'])
-			and isset($_GET['prod_category'])
+		if (isset($_GET['product_id']) 
+			and isset($_GET['product_name'])
+			and isset($_GET['product_category'])
+			and isset($_GET['product_description'])
+			and isset($_GET['price'])
 		){
-		$product_id=$_GET['product_newid'];
-		$product_newname=$_GET['product_newname'];
-		$prod_category=$_GET['prod_category'];
+		$product_id=$_GET['product_id'];
+		$product_newname=$_GET['product_name'];
+		$prod_category=$_GET['product_category'];
+		$prod_description=$_GET['product_description'];
+		$prod_price=$_GET['price'];
 		$tablename= "products";
 		
-		$query = "INSERT INTO $tablename (id, product_name, category)
-					VALUES ('$product_id','$product_newname','$prod_category');";
+		$query = "INSERT INTO $tablename (id, product_name, category,description,price)
+					VALUES ('$product_id','$product_newname','$prod_category',$prod_description,$prod_price);";
 		$result = mysqli_query($connection, $query) or die (mysqli_error($connection));
 		
 		if ($result){
