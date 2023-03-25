@@ -12,7 +12,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#about">About</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="products.php?page=addform">Add Product</a>
                 </li>
                 <li class="nav-item dropdown">
@@ -26,7 +26,7 @@
                         <li><a class="dropdown-item" href="essential.php?category=essential">Essentials</a></li>
                         <li><a class="dropdown-item" href="food.php?category=food">Foods</a></li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
             <div class="d-flex">
                 <div class="col h5" align="end">

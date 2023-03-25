@@ -101,23 +101,23 @@ include '../assets/styles/product-style.php';
                                     ?>
 
                                         <form name="addproductFORM" id="addproductFORM" method="POST" action="addproducts.php">
-                                            <table name="guestTable" id="guestTable" border="1">
+                                            <table name="guestTable" id="guestTable">
                                                 <tr>
                                                     <th> ID </th>
-                                                    <td> <input type="text" name="product_id" / readonly></td>
+                                                    <td> <input class="my-2 mx-1 py-2 rounded" style="width: 50rem;" type="text" name="product_id" / disabled></td>
                                                 </tr>
                                                 <tr>
                                                     <th> Product Name </th>
-                                                    <td> <input type="text" name="product_name" /></td>
+                                                    <td> <input class="my-2 mx-1 py-2 rounded" style="width: 50rem;" type="text" name="product_name" /></td>
                                                 </tr>
                                                 <tr>
                                                     <th> Description </th>
-                                                    <td> <input type="text" name="product_description" /></td>
+                                                    <td> <input class="my-2 mx-1 py-2 rounded" style="width: 50rem;" type="text" name="product_description" /></td>
                                                 </tr>
                                                 <tr>
                                                     <th> Category </th>
                                                     <td>
-                                                        <select name="product_category">
+                                                        <select name="product_category" class="my-2 mx-1 rounded py-2" style="width: 50rem;">
                                                             <option value="Grooming"> Grooming </option>
                                                             <option value="Accessories"> Accessories </option>
                                                             <option value="Essentials"> Essentials </option>
@@ -126,10 +126,10 @@ include '../assets/styles/product-style.php';
                                                     </td>
                                                 <tr>
                                                     <th> Price </th>
-                                                    <td> <input type="text" name="price" /></td>
+                                                    <td> <input type="text" name="price" class="my-2 mx-1 py-2 rounded" style="width: 50rem;" /></td>
                                                 </tr>
                                             </table><br />
-                                            <input type="submit" value="ADD PRODUCT" name="add" />
+                                            <input type="submit" value="ADD PRODUCT" name="add" class="btn btn-success" />
                                         </form>
                                     <?php
 

@@ -88,7 +88,7 @@ include '../assets/partials/_urlName.php';
                             <span class="d-none d-sm-inline mx-1"><?php echo $result['user_name']; ?></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                            <!-- <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add Product</a></li> -->
+                            <li><a class="dropdown-item" href="products.php?page=addform">Add Product</a></li>
                             <li><a class="dropdown-item" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Settings</a></li>
                             <li>
                                 <hr class="dropdown-divider">
