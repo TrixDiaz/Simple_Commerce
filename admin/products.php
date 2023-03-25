@@ -128,8 +128,18 @@ include '../assets/styles/product-style.php';
                                                     <th> Price </th>
                                                     <td> <input type="text" name="price" class="my-2 mx-1 py-2 rounded" style="width: 50rem;" /></td>
                                                 </tr>
+                                                <tr>
+                                                    <th>File</th>
+                                                    <td>
+                                                        <div class="col-4 my-2 py-2">
+                                                            <form action="#">
+                                                                <input type="file" class="form-control" name="image" id="image">
+                                                            </form>
+                                                        </div>
+                                                    </td>
+                                                </tr>
                                             </table><br />
-                                            <input type="submit" value="ADD PRODUCT" name="add" class="btn btn-success" />
+                                            <input type="submit" value="ADD PRODUCT" name="add" class="btn btn-success mx-1" />
                                         </form>
                                     <?php
 
