@@ -25,12 +25,13 @@ if (isset($_POST['add'])) {
 	$description = mysqli_real_escape_string($connection, $_POST['product_description']);
 	$category = mysqli_real_escape_string($connection, $_POST['product_category']);
 	$price = mysqli_real_escape_string($connection, $_POST['price']);
-	$image = mysqli_real_escape_string($connection, $_POST['filename']);
+	$image = mysqli_real_escape_string($connection, $_POST['image']);
 
 	$query = mysqli_query($connection, "INSERT INTO products (product_name,category,description,price,image)
 		    VALUES ('$name','$category','$description','$price','$image')");
 
 	if ($query) {
+		
 	}
 	header('location: ../../admin/products.php?page=products');
 } //end
