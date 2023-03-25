@@ -31,7 +31,7 @@ if (isset($_POST['add'])) {
 		    VALUES ('$name','$category','$description','$price','$image')");
 
 	if ($query) {
-		
+
 	}
 	header('location: ../../admin/products.php?page=products');
 } //end
