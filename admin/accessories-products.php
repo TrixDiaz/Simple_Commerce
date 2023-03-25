@@ -134,7 +134,7 @@ include '../assets/styles/product-style.php';
                                 </div>
                                 <div class="col-4 mt-4">
                                     <form action="#">
-                                        <input type="file" class="form-control" name="image">
+                                        <input type="file" class="form-control" name="fileToUpload" id="fileToUpload">
                                     </form>
                                 </div>
                                 <div class="col-4">

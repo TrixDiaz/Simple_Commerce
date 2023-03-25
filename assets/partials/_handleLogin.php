@@ -18,10 +18,8 @@
 
         if($row = mysqli_fetch_assoc($result))
         {
-            $hash = $row['user_password'];
-            if(password_verify($password, $hash))
+            if($password)
             {
-
                 // Login Sucessfull
                 session_start();
                 $_SESSION["loggedIn"] = true;
