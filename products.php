@@ -125,7 +125,7 @@ include './assets/styles/product-style.php';
 								<a href='section.php?page=edit&id=$data_category'>Edit</a></td></tr>"; */
 					} // closing of while
 				}
-			} else if ($_GET["page"] == "addforms") {
+			} else if ($_GET["page"] == "addform") {
 			?>
 
 				<form name="addproductFORM" id="addproductFORM" method="POST" action="addproducts.php">

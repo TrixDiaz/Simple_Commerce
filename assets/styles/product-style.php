@@ -25,11 +25,11 @@ h1 {
 .column {
   float: left;
   width: 25%;
-  
+  padding: 10px;
 }
 .column p{
   width: auto;
-   height: 200px;
+   height: 100px;
 }
 
 /* Content */

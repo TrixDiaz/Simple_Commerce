@@ -39,92 +39,11 @@ require '../assets/partials/_admin-check.php';
                                         <th scope="col">Price</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>Food</td>
-                                        <td>Sample</td>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>Food</td>
-                                        <td>Sample</td>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry the Bird</td>
-                                        <td>Sample</td>
-                                        <td>Food</td>
-                                        <td>Sample</td>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">4</th>
-                                        <td>Larry the Bird</td>
-                                        <td>Sample</td>
-                                        <td>Food</td>
-                                        <td>Sample</td>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">5</th>
-                                        <td>Larry the Bird</td>
-                                        <td>Sample</td>
-                                        <td>Food</td>
-                                        <td>Sample</td>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">6</th>
-                                        <td>Larry the Bird</td>
-                                        <td>Sample</td>
-                                        <td>Food</td>
-                                        <td>Sample</td>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">7</th>
-                                        <td>Larry the Bird</td>
-                                        <td>Sample</td>
-                                        <td>Food</td>
-                                        <td>Sample</td>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">8</th>
-                                        <td>Larry the Bird</td>
-                                        <td>Sample</td>
-                                        <td>Food</td>
-                                        <td>Sample</td>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">9</th>
-                                        <td>Larry the Bird</td>
-                                        <td>Sample</td>
-                                        <td>Food</td>
-                                        <td>Sample</td>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">10</th>
-                                        <td>Larry the Bird</td>
-                                        <td>Sample</td>
-                                        <td>Food</td>
-                                        <td>Sample</td>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">11</th>
-                                        <td>Larry the Bird</td>
-                                        <td>Sample</td>
-                                        <td>Food</td>
-                                        <td>Sample</td>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">12</th>
-                                        <td>Larry the Bird</td>
-                                        <td>Sample</td>
-                                        <td>Food</td>
-                                        <td>Sample</td>
-                                        </tr>
-                                    </tbody>
+                                 <tbody>
+                                    <?php 
+                                        
+                                    ?>
+                                 </tbody>
                                     </table>
                                </div>
                            </div>
