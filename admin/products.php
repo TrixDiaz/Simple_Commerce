@@ -251,7 +251,7 @@ include '../assets/styles/product-style.php';
                                 </div>
                                 <div class="col-4 mt-4">
                                     <form action="#">
-                                        <input type="file" class="form-control" id="myFile" name="filename" accept=".jpg, .jpeg, .png">
+                                        <input type="file" class="form-control" name="image">
                                     </form>
                                 </div>
                                 <div class="col-4">

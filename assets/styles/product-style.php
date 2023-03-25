@@ -29,7 +29,7 @@ h1 {
 }
 .column p{
   width: auto;
-   height: 100px;
+   height: 120px;
 }
 
 /* Content */
