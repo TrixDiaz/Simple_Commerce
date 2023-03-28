@@ -58,7 +58,7 @@ include '../assets/styles/product-style.php';
                                     $tablename = "products";
 
                                     // SQL statement to check record match from form to DB
-                                    $query = "SELECT * FROM $tablename where category = 'essentials'";
+                                    $query = "SELECT * FROM $tablename where category = 'Essentials'";
                                     $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
 
                                     // Count number of matching records

@@ -100,11 +100,11 @@ include '../assets/styles/product-style.php';
                                     } else if ($_GET["page"] == "addform") {
                                     ?>
 
-                                        <form name="addproductFORM" id="addproductFORM" method="POST" action="addproducts.php">
+                                        <form method="POST" action="../assets/partials/addproducts.php">
                                             <table name="guestTable" id="guestTable">
                                                 <tr>
                                                     <th> ID </th>
-                                                    <td> <input class="my-2 mx-1 py-2 rounded" style="width: 50rem;" type="text" name="product_id" / disabled></td>
+                                                    <td> <input class="my-2 mx-1 py-2 rounded" style="width: 50rem;" type="text" name="product_id" readonly></td>
                                                 </tr>
                                                 <tr>
                                                     <th> Product Name </th>
@@ -132,9 +132,9 @@ include '../assets/styles/product-style.php';
                                                     <th>File</th>
                                                     <td>
                                                         <div class="col-4 my-2 py-2">
-                                                            <form action="#">
+                                                           
                                                                 <input type="file" class="form-control" name="image" id="image">
-                                                            </form>
+                                                           
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -275,7 +275,7 @@ include '../assets/styles/product-style.php';
                                         <select class="form-select bg-light " aria-label="Default select example" name="product_category">
                                             <option selected>Category</option>
                                             <option value="Food">Food</option>
-                                            <option value="Essential">Essesntial</option>
+                                            <option value="Essentials">Essesntial</option>
                                             <option value="Accessories">Accessories</option>
                                             <option value="Grooming">Grooming</option>
                                         </select>
