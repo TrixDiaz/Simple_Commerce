@@ -5,9 +5,13 @@ include './assets/user-partials/_registerModal.php';
 ?>
 <title>Home</title>
 
-<?php if (isset($_GET['error'])) { ?>
+
+<section id="home">
+  <div class="parallax">
+    <?php include './assets/partials/_header.php'; ?>
+    <?php if (isset($_GET['error'])) { ?>
   <div class="container">
-    <div x-transition.leave.duration.800ms x-data="{show : true}" x-show="show" x-init="setTimeout(()=> show = false, 3000)" class="alert alert-danger alert-dismissible fade show position-absolute top-1 end-0 mx-3 mt-5" role="alert">
+    <div x-transition.leave.duration.800ms x-data="{show : true}" x-show="show" x-init="setTimeout(()=> show = false, 3000)" class="alert alert-danger alert-dismissible fade show position-absolute top-1 end-0 mx-3" role="alert">
       <i class="bi bi-info-circle"><span>&nbsp;<?php echo $_GET['error']; ?> </span> </i>
     </div>
   </div>
@@ -15,14 +19,11 @@ include './assets/user-partials/_registerModal.php';
 
 <?php if (isset($_GET['success'])) { ?>
   <div class="container">
-    <div x-transition.leave.duration.800ms x-data="{show : true}" x-show="show" x-init="setTimeout(()=> show = false, 3000)" class="alert alert-success alert-dismissible fade show position-absolute top-1 end-0 mx-3 mt-5" role="alert">
+    <div x-transition.leave.duration.800ms x-data="{show : true}" x-show="show" x-init="setTimeout(()=> show = false, 3000)" class="alert alert-success alert-dismissible fade show position-absolute top-1 end-0 mx-3" role="alert">
       <i class="bi bi-info-circle"><span>&nbsp;<?php echo $_GET['success']; ?> </span> </i>
     </div>
   </div>
 <?php } ?>
-<section id="home">
-  <div class="parallax">
-    <?php include './assets/partials/_header.php'; ?>
     <br>
     <div class="container mt-5">
       <br>
