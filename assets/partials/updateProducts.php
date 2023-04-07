@@ -16,24 +16,30 @@ if (!$select_db) {
     die("Database Selection Failed" . mysqli_error($connection));
 }
 
-if (isset($_POST['update'])) {
-
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update"]))
+{
 
     // fetching name and password from textbox
-    $id = mysqli_real_escape_string($connection, $_POST['product_id']);
-    $name = mysqli_real_escape_string($connection, $_POST['product_name']);
-    $description = mysqli_real_escape_string($connection, $_POST['product_description']);
-    $category = mysqli_real_escape_string($connection, $_POST['product_category']);
-    $price = mysqli_real_escape_string($connection, $_POST['price']);
+    // $id = mysqli_real_escape_string($connection, $_POST['product_id']);
+    // $name = mysqli_real_escape_string($connection, $_POST['product_name']);
+    // $description = mysqli_real_escape_string($connection, $_POST['product_description']);
+    // $category = mysqli_real_escape_string($connection, $_POST['product_category']);
+    // $price = mysqli_real_escape_string($connection, $_POST['price']);
 
+    $id = $_POST["id"];
+    $name = $_POST["product_name"];
+    $description = $_POST["product_description"];
+    $category = $_POST["product_category"];
+    $price = $_POST["price"];
 
-    $query =  mysqli_query($connection,"UPDATE products SET product_name ='" . $name . "', category = '" . $category . "', description = '" . $description . "', price = '" . $price . "',now() WHERE id = '" . $id . "' ");
+    //$query =  mysqli_query($connection,"UPDATE products SET product_name ='" . $name . "', category = '" . $category . "', description = '" . $description . "', price = '" . $price . "',now() WHERE id = '" . $id . "' ");
 
-
+    $sql = "UPDATE `products` SET product_name = '$name', category = '$category', description = '$description',  price = '$price', WHERE id='$id'";
     // $query = mysqli_query($connection, "UPDATE products (product_name,category,description,price)
 	// 	    SET ('$name','$category','$description','$price') WHERE id = '$id';");
 
-    if ($query) {
+    if(mysqli_query($connection, $sql)){
+        header('location: ../../admin/products.php?page=products');
     }
-    header('location: ../../admin/products.php?page=products');
+   
 } //end

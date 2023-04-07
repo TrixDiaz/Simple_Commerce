@@ -197,7 +197,7 @@ include '../assets/styles/product-style.php';
                                                 <tr>
                                                     <th> ID </th>
                                                     <td>
-                                                        <span name="product_id"><?php echo $result['id']; ?></span>
+                                                        <span name="id" value="<?php echo $result['id']; ?>"></span>
                                                     </td>
                                                 </tr>
                                                 <tr>
