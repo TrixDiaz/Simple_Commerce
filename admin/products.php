@@ -132,9 +132,9 @@ include '../assets/styles/product-style.php';
                                                     <th>File</th>
                                                     <td>
                                                         <div class="col-4 my-2 py-2">
-                                                           
-                                                                <input type="file" class="form-control" name="image" id="image">
-                                                           
+
+                                                            <input type="file" class="form-control" name="image" id="image">
+
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -193,26 +193,28 @@ include '../assets/styles/product-style.php';
                                         $result = mysqli_fetch_assoc($sql);
                                     ?>
                                         <table name="guestTable" id="guestTable" align="center">
-                                            <form action="" method="POST">
+                                            <form action="../assets/partials/updateProducts.php" method="POST">
                                                 <tr>
                                                     <th> ID </th>
-                                                    <td> <span><?php echo $result['id']; ?></span></td>
+                                                    <td>
+                                                        <span name="product_id"><?php echo $result['id']; ?></span>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <th> Product Name </th>
-                                                    <td> <input class="my-2 mx-1" style="width: 50rem;" type="text" value="<?php echo $result['product_name']; ?>"></td>
+                                                    <td> <input class="my-2 mx-1" name="product_name" style="width: 50rem;" type="text" value="<?php echo $result['product_name']; ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <th> Category </th>
-                                                    <td> <input class="my-2 mx-1" style="width: 50rem;" type="text" value="<?php echo $result['category']; ?>"></td>
+                                                    <td> <input class="my-2 mx-1" name="product_category" style="width: 50rem;" type="text" value="<?php echo $result['category']; ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <th> Description </th>
-                                                    <td> <input class="my-2 mx-1" style="width: 50rem;" type="text" value="<?php echo $result['description']; ?>"></td>
+                                                    <td> <input class="my-2 mx-1" name="product_description" style="width: 50rem;" type="text" value="<?php echo $result['description']; ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <th> Price </th>
-                                                    <td> <input class="my-2 mx-1" style="width: 50rem;" type="text" value="<?php echo $result['price']; ?>"></td>
+                                                    <td> <input class="my-2 mx-1" name="price" style="width: 50rem;" type="text" value="<?php echo $result['price']; ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <td> <input type="submit" value="Update" name="update" class="btn btn-primary"></td>

@@ -22,9 +22,19 @@ include '../assets/partials/_urlName.php';
         <div class="col-auto col-md-4  col-xl-3 col-sm-4 mx-4 my-2">
             <div class="card shadow" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Food</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Total Count</h6>
-                    <p class="card-text"> List of foods here!! </p>
+                    <h5 class="card-title">Total Food</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        <?php
+
+                        $result = mysqli_query($conn, "select count(product_name) FROM products");
+                        $row = mysqli_fetch_array($result);
+
+                        $total = $row[0];
+                        echo "Total " . $total;
+
+                        ?>
+
+                    </h6>
                     <a href="food-products.php" class="card-link">View Data</a>
                 </div>
             </div>
@@ -33,8 +43,10 @@ include '../assets/partials/_urlName.php';
             <div class="card shadow" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Groom</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Total Count</h6>
-                    <p class="card-text"> Grooming contents here!! </p>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                       Total Count
+                    </h6>
+                   
                     <a href="grooming-products.php" class="card-link">View Data</a>
                 </div>
             </div>
@@ -44,7 +56,7 @@ include '../assets/partials/_urlName.php';
                 <div class="card-body">
                     <h5 class="card-title">Essential</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Total Count</h6>
-                    <p class="card-text"> Essential products here!! </p>
+              
                     <a href="essential-products.php" class="card-link">View Data</a>
                 </div>
             </div>
@@ -54,7 +66,7 @@ include '../assets/partials/_urlName.php';
                 <div class="card-body">
                     <h5 class="card-title">Accessories</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Total Count</h6>
-                    <p class="card-text"> Accessories heree!! </p>
+                  
                     <a href="accessories-products.php" class="card-link">View Data</a>
                 </div>
             </div>
