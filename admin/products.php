@@ -87,10 +87,10 @@ include '../assets/styles/product-style.php';
 								<div class='content'>
 								  <img src='../assets/image/$data_img' class='gallery-item' alt='Grooming' style='width:100%' height='200px'>
 								  <hr>
-								  <h5>$data_productname</h5>
-								  <span class='badge bg-info'>Price: $data_price</span> 
-								  <a href='products.php?page=detail&id=$data_id'>View</a> 
-								  <a href='products.php?page=edit&id=$data_id'>Edit</a>
+								  <h5 class=''>$data_productname</h5> 
+								  <span class='badge bg-info mx-2'>Price: $data_price</span>
+								  <a class='badge btn btn-primary mx-3' href='products.php?page=detail&id=$data_id'>View</a> 
+								  <a class='badge btn btn-warning mx-3' href='products.php?page=edit&id=$data_id'>Edit</a>
 								  <hr>
 								  <p>$data_description</p>
 								</div>
@@ -104,7 +104,7 @@ include '../assets/styles/product-style.php';
                                             <table name="guestTable" id="guestTable">
                                                 <tr>
                                                     <th> ID </th>
-                                                    <td> <input class="my-2 mx-1 py-2 rounded" style="width: 50rem;" type="text" name="product_id" readonly></td>
+                                                    <td> <input class="my-2 mx-1 py-2 rounded bg-secondary bg-opacity-25" style="width: 50rem;" type="text" name="product_id" readonly></td>
                                                 </tr>
                                                 <tr>
                                                     <th> Product Name </th>
@@ -199,28 +199,29 @@ include '../assets/styles/product-style.php';
                                                 <tr>
                                                     <th> ID </th>
                                                     <td>
-                                                        <span name="id"><?php echo $result['id']; ?> </span>
+                                                        <input type="hidden" name="id" class="txtField" value="<?php echo $result['id']; ?>">
+                                                        <input class="my-2 mx-1 rounded bg-secondary bg-opacity-25" style=" width: 50rem;" type="text" name="id" value="<?php echo $result['id']; ?>" readonly> </input>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th> Product Name </th>
-                                                    <td> <input class="my-2 mx-1" name="product_name" style="width: 50rem;" type="text" value="<?php echo $result['product_name']; ?>"></td>
+                                                    <td> <input class="my-2 mx-1 rounded" " style=" width: 50rem;" type="text" name="product_name" value="<?php echo $result['product_name']; ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <th> Category </th>
-                                                    <td> <input class="my-2 mx-1" name="product_category" style="width: 50rem;" type="text" value="<?php echo $result['category']; ?>"></td>
+                                                    <td> <input class="my-2 mx-1 rounded" style="width: 50rem;" type="text" name="product_category" value="<?php echo $result['category']; ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <th> Description </th>
-                                                    <td> <input class="my-2 mx-1" name="product_description" style="width: 50rem;" type="text" value="<?php echo $result['description']; ?>"></td>
+                                                    <td> <input class="my-2 mx-1 rounded" style="width: 50rem;" type="text" name="product_description" value="<?php echo $result['description']; ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <th> Price </th>
-                                                    <td> <input class="my-2 mx-1" name="price" style="width: 50rem;" type="text" value="<?php echo $result['price']; ?>"></td>
+                                                    <td> <input class="my-2 mx-1 rounded" style="width: 50rem;" type="text" name="price" value="<?php echo $result['price']; ?>"></td>
                                                 </tr>
 
                                                 <tr>
-                                                    <td> <input type="submit" name="update" value="Update" class="btn btn-primary"></td>
+                                                    <td> <input type="submit" value="Update" name="update" class="btn btn-primary"></td>
                                                 </tr>
 
                                             </table>
@@ -242,8 +243,6 @@ include '../assets/styles/product-style.php';
             </div>
         </div>
     </div>
-
-
 
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

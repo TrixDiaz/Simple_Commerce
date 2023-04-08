@@ -41,18 +41,21 @@ if (isset($_POST['add'])) {
 if (isset($_POST["update"])) {
 	// fetching name and password from textbox
 
-	//  $id = mysqli_real_escape_string($connection, $_POST['id']);
-	$name = mysqli_real_escape_string($connection, $_POST['product_name']);
-	$description = mysqli_real_escape_string($connection, $_POST['product_description']);
-	$category = mysqli_real_escape_string($connection, $_POST['product_category']);
-	$price = mysqli_real_escape_string($connection, $_POST['price']);
+	// $id = mysqli_real_escape_string($connection, $_POST['id']);
+	// $name = mysqli_real_escape_string($connection, $_POST['product_name']);
+	// $description = mysqli_real_escape_string($connection, $_POST['product_description']);
+	// $category = mysqli_real_escape_string($connection, $_POST['product_category']);
+	// $price = mysqli_real_escape_string($connection, $_POST['price']);
 
-	$query = mysqli_query(
-		$connection,
-		"UPDATE products 
-        SET product_name=$name,product_description=$description,product_category=$category,price=$price ,
-        WHERE product_name=$name "
-	);
+
+	// $query = mysqli_query(
+	// 	$connection,
+	// 	" UPDATE products 
+    //       SET product_name=$name. product_description=$description,product_category=$category,price=$price,
+    //       WHERE id=$id "
+	// );
+
+	mysqli_query($connection, "UPDATE products SET product_name='" . $_POST['product_name'] . "', description='" . $_POST['product_description'] . "',category='" . $_POST['product_category'] . "', price='" . $_POST['price'] . "' WHERE id = '" . $_POST['id'] . "' ");
 
 	header('location: ../../admin/products.php?page=products');
 	//../assets/partials/updateProducts.php
