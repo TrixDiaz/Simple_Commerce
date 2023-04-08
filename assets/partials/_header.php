@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-light fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand mx-5" href="#"> <img src="./assets/image/logo.png" alt="Logo" style="width:50px;" class="rounded-pill"> </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,10 +7,13 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                    <a class="nav-link active" aria-current="page" href="index.php?page=home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="#about?page=about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?page=products">Products</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="products.php?page=addform">Add Product</a>
@@ -39,3 +42,5 @@
         </div>
     </div>
 </nav>
+
+

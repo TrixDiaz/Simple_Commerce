@@ -64,14 +64,6 @@ include '../assets/styles/product-style.php';
                                         // Count number of matching records
                                         $count = mysqli_num_rows($result);
 
-                                        /* if ($_GET["page"]=="list"){
-					$tablename = "section";
-					$query = "SELECT * FROM $tablename ";
-					$result = mysqli_query($connection, $query) or die(mysqli_error($connection));
-					$count = mysqli_num_rows($result);
-				} */
-
-
                                         if ($count > 0) {
 
                                             while ($row = mysqli_fetch_assoc($result)) {
