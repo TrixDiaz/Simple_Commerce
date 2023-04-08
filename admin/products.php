@@ -43,7 +43,7 @@ include '../assets/styles/product-style.php';
                                     //=== VALIDATE DATABSE connection_aborted
                                     $connection = mysqli_connect($connect_servername, $connect_username, $connect_password);
                                     if (!$connection) {
-                                        die("Database Connection Failed" . mysqli_error($connection));
+                                        die("Database Connection Failed");
                                     }
 
                                     $select_db = mysqli_select_db($connection, $connect_dbname);
@@ -191,13 +191,15 @@ include '../assets/styles/product-style.php';
                                         $query = "SELECT * FROM $tablename WHERE id = '$data_id' ";
                                         $sql = mysqli_query($conn, $query);
                                         $result = mysqli_fetch_assoc($sql);
+
                                     ?>
-                                        <table name="guestTable" id="guestTable" align="center">
-                                            <form action="../assets/partials/updateProducts.php" method="POST">
+
+                                        <form method="POST" action="../assets/partials/addproducts.php">
+                                            <table name="guestTable" id="guestTable" align="center">
                                                 <tr>
                                                     <th> ID </th>
                                                     <td>
-                                                        <span name="id" value="<?php echo $result['id']; ?>"></span>
+                                                        <span name="id"><?php echo $result['id']; ?> </span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -216,16 +218,22 @@ include '../assets/styles/product-style.php';
                                                     <th> Price </th>
                                                     <td> <input class="my-2 mx-1" name="price" style="width: 50rem;" type="text" value="<?php echo $result['price']; ?>"></td>
                                                 </tr>
+
                                                 <tr>
-                                                    <td> <input type="submit" value="Update" name="update" class="btn btn-primary"></td>
+                                                    <td> <input type="submit" name="update" value="Update" class="btn btn-primary"></td>
                                                 </tr>
-                                            </form>
-                                        </table>
+
+                                            </table>
+                                        </form>
+
+
+
                                     <?php
                                         // echo "<p class='redtext'>No record found</p>";
                                     }
 
                                     ?>
+
                                 </tbody>
                             </table>
                         </div>
