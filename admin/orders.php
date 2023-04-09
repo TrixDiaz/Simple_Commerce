@@ -69,11 +69,11 @@ include '../assets/partials/_urlName.php';
                 <form action="../assets/partials/_handleSignup.php" method="POST">
                     <div class="card shadow mb-3 py-3">
                         <div class="card-body mx-5 py-5">
-                            <div class="d-flex justify-content-around mb-3 overflow-auto">
-                                <div class="container mt-3">
+                            <div class="d-flex justify-content-around mb-3 overflow-auto" style='max-width: auto; max-height: 65vh;'>
+                                <div class="container mt-3 ">
                                     <h2 class="mb-4">Customer Order's</h2>
                                     <?php
-                                    $result = mysqli_query($connection, "SELECT * FROM orders");
+                                    $result = mysqli_query($connection, "SELECT * FROM orders ");
                                     if (mysqli_num_rows($result) > 0) {
                                     ?>
                                         <table class="table table-striped table-border table-hover">
@@ -100,7 +100,7 @@ include '../assets/partials/_urlName.php';
                                                 </tr>
                                             <?php
                                                 $i++;
-                                            } 
+                                            }
 
                                             ?>
                                         </table>
@@ -117,7 +117,6 @@ include '../assets/partials/_urlName.php';
             </div>
         </div>
     </section>
-    <?php include '../assets/partials/_footer.php'; ?>
 </div>
 
 <!-- sidebar end div  -->

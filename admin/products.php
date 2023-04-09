@@ -20,7 +20,7 @@ include '../assets/styles/product-style.php';
             <a href="../admin/dashboard.php?id=$user" class="btn btn-info h3"><i class="bi bi-arrow-clockwise"></i></a>
         </div>
     </nav>
-    <div class="container overflow-auto" style='max-width: auto; max-height: 90vh;'>
+    <div class="container overflow-auto" style='max-width: auto; max-height: 85vh;'>
         <div class="card shadow">
             <div class="card-body">
                 <div class="card-content">
