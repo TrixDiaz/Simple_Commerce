@@ -66,4 +66,23 @@ if (isset($_POST["order"])) {
 
 } //end
 
+if (isset($_POST["deleteorder"])) {
+
+	$id = mysqli_real_escape_string($connection, $_POST['id']);
+	// Create connection
+	
+	// Check connection
+
+	// sql to delete a record
+	$sql = "DELETE FROM orders WHERE id=$id " ;
+
+	if ($connection->query($sql) === TRUE) {
+		header('location: ../../admin/orders.php?success=Successfully Deleted in Records');
+	} else {
+		echo "Error deleting record: " . $connection->error;
+	}
+
+	$connection->close();
+}
+
 

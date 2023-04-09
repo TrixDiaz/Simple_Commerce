@@ -30,7 +30,7 @@ if ($_GET["page"] == "products") {
     $tablename = "products";
 
     // SQL statement to check record match from form to DB
-    $query = "SELECT * FROM $tablename";
+    $query = "SELECT * FROM $tablename ORDER BY id DESC";
     $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
 
     // Count number of matching records

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2023 at 01:09 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Apr 09, 2023 at 06:20 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,13 +28,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
   `product_name` varchar(250) NOT NULL,
   `product_price` int(11) NOT NULL,
   `product_description` varchar(250) NOT NULL,
   `username` varchar(250) NOT NULL,
   `phone` varchar(250) NOT NULL,
   `address` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -48,15 +49,15 @@ CREATE TABLE `products` (
   `category` varchar(250) NOT NULL,
   `description` varchar(250) NOT NULL,
   `price` int(11) NOT NULL,
-  `image` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `image` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `product_name`, `category`, `description`, `price`, `image`) VALUES
-(5, 'Shampoo', 'Grooming', 'to treat bacterial infections, skin rashes, and dandruff in pets. mild to prevent the loss of natural oils. It still gets the dirt out while protecting his skin and coat.', 8888, 'Shampoo1.jpg'),
+(5, 'Shampoo', 'Grooming', 'to treat bacterial infections, skin rashes, and dandruff in pets. mild to prevent the loss of natural oils. It still gets the dirt out while protecting his skin and coat.', 469, 'Shampoo1.jpg'),
 (6, 'Toothbrush', 'Grooming', 'pick a peaceful time to brush the teeth of your pet, a toothbrush with slanted handles that you can use for your pet with ease.', 51, 'tootbursh.jfif'),
 (7, 'Paw cleaner', 'Grooming', 'use this paw cleanser to make cleaning easier and faster than battling with cloths and buckets of water.', 500, 'Cleaner1.jpg'),
 (8, 'Perfume', 'Grooming', 'regarding our pets, we should use fragrances and scented items with caution. Directly applying strongly fragrant shampoos or sprays to a pet may result in skin responses, nausea, lethargy, or even airway irritation.', 342, 'Perfume1.jpg'),
@@ -70,7 +71,8 @@ INSERT INTO `products` (`id`, `product_name`, `category`, `description`, `price`
 (16, 'Dog Food', 'Food', 'composed of meats, meat byproducts, cereals, grains, vitamins, and minerals to provide your dog with the proper nutrients and balance.', 1049, 'dogfood1.jpg'),
 (17, 'Cat food', 'Food', 'our grain-free, organic, and nutritious cat chow is packed with the nutrients your cat needs.', 1200, 'catfood.jpg'),
 (18, 'Bird Food', 'Food', 'variety of seeds, nuts, dried fruits, and vitamins are all present in this bird seed.', 800, 'birdfood.jpg'),
-(19, 'Fish pellets', 'Food', '\r\nthey are a practical and simple method of feeding your fish. for easier handling, more equal intake, and less dust.', 225, 'fishfood.jpg');
+(19, 'Fish pellets', 'Food', '\r\nthey are a practical and simple method of feeding your fish. for easier handling, more equal intake, and less dust.', 225, 'fishfood.jpg'),
+(20, 'sample', 'Food', 'sample', 213, 'dogfood1.jpg');
 
 -- --------------------------------------------------------
 
@@ -89,7 +91,7 @@ CREATE TABLE `users` (
   `profile_picture` varchar(200) DEFAULT NULL,
   `role` varchar(5) NOT NULL,
   `user_created` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -102,6 +104,12 @@ INSERT INTO `users` (`user_id`, `user_fullname`, `age`, `birth_date`, `contact_n
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `products`
@@ -120,10 +128,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `users`
