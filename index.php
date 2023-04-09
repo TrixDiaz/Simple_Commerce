@@ -10,6 +10,7 @@ include './assets/user-partials/_registerModal.php';
 <section id="home">
   <div class="parallax">
     <?php include './assets/partials/_header.php'; ?>
+    <br><br><br><br>
     <?php if (isset($_GET['error'])) { ?>
       <div class="container">
         <div x-transition.leave.duration.800ms x-data="{show : true}" x-show="show" x-init="setTimeout(()=> show = false, 3000)" class="alert alert-danger alert-dismissible fade show position-absolute top-1 end-0 mx-3" role="alert">

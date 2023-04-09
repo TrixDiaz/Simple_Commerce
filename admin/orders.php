@@ -40,27 +40,27 @@ include '../assets/partials/_urlName.php';
     <?php } ?>
 
 
-<?php
+    <?php
 
-//=== CONNECT TO DATABASE
-$connect_servername = "localhost";
-$connect_username = "root";
-$connect_password = "";
-$connect_dbname = "test_admin";
+    //=== CONNECT TO DATABASE
+    $connect_servername = "localhost";
+    $connect_username = "root";
+    $connect_password = "";
+    $connect_dbname = "test_admin";
 
-//=== VALIDATE DATABSE connection_aborted
-$connection = mysqli_connect($connect_servername, $connect_username, $connect_password);
-if (!$connection) {
-    die("Database Connection Failed");
-}
+    //=== VALIDATE DATABSE connection_aborted
+    $connection = mysqli_connect($connect_servername, $connect_username, $connect_password);
+    if (!$connection) {
+        die("Database Connection Failed");
+    }
 
-$select_db = mysqli_select_db($connection, $connect_dbname);
-if (!$select_db) {
-    die("Database Selection Failed" . mysqli_error($connection));
-}
+    $select_db = mysqli_select_db($connection, $connect_dbname);
+    if (!$select_db) {
+        die("Database Selection Failed" . mysqli_error($connection));
+    }
 
 
-?>
+    ?>
 
 
     <section id="add-admin">
@@ -72,30 +72,43 @@ if (!$select_db) {
                             <div class="d-flex justify-content-around mb-3 overflow-auto">
                                 <div class="container mt-3">
                                     <h2 class="mb-4">Customer Order's</h2>
-                                    <table class="table table-striped table-hover table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Product Name</th>
-                                                <th>Price</th>
-                                                <th>Description</th>
-                                                <th>Client Name</th>
-                                                <th>Contact</th>
-                                                <th>Address</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                                    <?php
+                                    $result = mysqli_query($connection, "SELECT * FROM orders");
+                                    if (mysqli_num_rows($result) > 0) {
+                                    ?>
+                                        <table class="table table-striped table-border table-hover">
 
                                             <tr>
-                                                <td>John</td>
-                                                <td>Doe</td>
-                                                <td>john@example.com</td>
-                                                <td>John</td>
-                                                <td>Doe</td>
-                                                <td>john@example.com</td>
+                                                <td>Product Name</td>
+                                                <td>Price</td>
+                                                <td>Description</td>
+                                                <td>Name</td>
+                                                <td>Phone</td>
+                                                <td>Address</td>
                                             </tr>
+                                            <?php
+                                            $i = 0;
+                                            while ($row = mysqli_fetch_array($result)) {
+                                            ?>
+                                                <tr>
+                                                    <td class="w-25"><?php echo $row["product_name"]; ?></td>
+                                                    <td class="w-25"><?php echo $row["product_price"]; ?></td>
+                                                    <td class="w-25"><?php echo $row["product_description"]; ?></td>
+                                                    <td class="w-25"><?php echo $row["username"]; ?></td>
+                                                    <td class="w-25"><?php echo $row["phone"]; ?></td>
+                                                    <td class="w-25"><?php echo $row["address"]; ?></td>
+                                                </tr>
+                                            <?php
+                                                $i++;
+                                            } 
 
-                                        </tbody>
-                                    </table>
+                                            ?>
+                                        </table>
+                                    <?php
+                                    } else {
+                                        echo "<h4> No Record's Found </h4>";
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>

@@ -8,7 +8,7 @@ $connect_dbname = "test_admin";
 //=== VALIDATE DATABSE connection_aborted
 $connection = mysqli_connect($connect_servername, $connect_username, $connect_password);
 if (!$connection) {
-	die("Database Connection Failed" . mysqli_error($connection));
+	die("Database Connection Failed" . mysqli_error());
 }
 
 $select_db = mysqli_select_db($connection, $connect_dbname);
@@ -61,7 +61,7 @@ if (isset($_POST["order"])) {
 		    VALUES ('$name','$description','$price','$username','$phone','$address')");
 
 	if ($query) {
-		header("location: ../../index.php?page=home");
+		header("location: ../../index.php?success=Order Successfully Sent!");
 	}
 
 } //end
