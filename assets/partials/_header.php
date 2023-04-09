@@ -7,13 +7,13 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php?page=home">Home</a>
+                    <a class="nav-link active" aria-current="page" href="index.php#home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about?page=about">About</a>
+                    <a class="nav-link" href="index.php#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=products">Products</a>
+                    <a class="nav-link" href="about.php?page=products">Products</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="products.php?page=addform">Add Product</a>

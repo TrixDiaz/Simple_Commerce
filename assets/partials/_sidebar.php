@@ -42,10 +42,10 @@ include '../assets/partials/_urlName.php';
                                 </li>
                             </ul>
                         </li>
-                        <!-- <li>
-                        <a href="products.php" class="nav-link px-0 align-middle" id="nav-link">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline" >Products</span></a>
-                    </li> -->
+                        <li>
+                        <a href="orders.php" class="nav-link px-0 align-middle" id="nav-link">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline" >Orders</span></a>
+                    </li>
                         <!-- <li>
                         <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle" id="nav-link">
                             <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
@@ -78,7 +78,7 @@ include '../assets/partials/_urlName.php';
                     </li> -->
                         <li>
                             <a href="signup.php" class="nav-link px-0 align-middle" id="nav-link">
-                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">ADD NEW ADMIN</span> </a>
+                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Admin</span> </a>
                         </li>
                     </ul>
                     <hr>
