@@ -48,7 +48,22 @@ if (isset($_POST["update"])) {
 
 if (isset($_POST["order"])) {
 
-	
-}
+	// fetching name and password from textbox
+
+	$name = mysqli_real_escape_string($connection, $_POST['product_name']);
+	$description = mysqli_real_escape_string($connection, $_POST['product_description']);
+	$price = mysqli_real_escape_string($connection, $_POST['price']);
+	$username = mysqli_real_escape_string($connection, $_POST['username']);
+	$phone = mysqli_real_escape_string($connection, $_POST['phone']);
+	$address = mysqli_real_escape_string($connection, $_POST['address']);
+
+	$query = mysqli_query($connection, "INSERT INTO orders (product_name,product_description,product_price,username,phone,address)
+		    VALUES ('$name','$description','$price','$username','$phone','$address')");
+
+	if ($query) {
+		header("location: ../../index.php?page=home");
+	}
+
+} //end
 
 
