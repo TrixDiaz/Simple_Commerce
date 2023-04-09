@@ -76,10 +76,10 @@ if (isset($_POST["deleteorder"])) {
 	// sql to delete a record
 	$sql = "DELETE FROM orders WHERE id=$id " ;
 
-	if ($connection->query($sql) === TRUE) {
-		header('location: ../../admin/orders.php?success=Successfully Deleted in Records');
+	if ($sql === TRUE) {
+		header('location: ../../admin/orders.php?success=Successfully Deleted Record');
 	} else {
-		echo "Error deleting record: " . $connection->error;
+		header('location: ../../admin/orders.php?error=Error Deleting Record');
 	}
 
 	$connection->close();

@@ -77,7 +77,6 @@ include '../assets/partials/_urlName.php';
                                     if (mysqli_num_rows($result) > 0) {
                                     ?>
                                         <table class="table table-striped table-border table-hover">
-
                                             <tr>
                                                 <td>Product Name</td>
                                                 <td>Price</td>
@@ -92,16 +91,14 @@ include '../assets/partials/_urlName.php';
                                             while ($row = mysqli_fetch_array($result)) {
                                             ?>
                                                 <tr>
-                                                    <input type="text" name="<?php echo $row["id"]; ?>" hidden>
-                                                    <td class="w-25"><?php echo $row["product_name"]; ?></td>
-                                                    <td class="w-25"><?php echo $row["product_price"]; ?></td>
-                                                    <td class="w-25"><?php echo $row["product_description"]; ?></td>
-                                                    <td class="w-25"><?php echo $row["username"]; ?></td>
-                                                    <td class="w-25"><?php echo $row["phone"]; ?></td>
-                                                    <td class="w-25"><?php echo $row["address"]; ?></td>
-                                                    <?php echo "  <td><input type='submit' name='deleteOrder' class='btn btn-danger mx-2 my-2' value='Done'></td> "; ?>
-
-
+                                                    <input type="text" name="id" hidden>
+                                                    <td class="w-25"><input type="text" name="" value="$row['product_name']" hidden><?php echo $row["product_name"]; ?></td>
+                                                    <td class="w-25"><input type="text" name="" value="$row['product_price']" hidden><?php echo $row["product_price"]; ?></td>
+                                                    <td class="w-25"><input type="text" name="" value="$row['product_description']" hidden><?php echo $row["product_description"]; ?></td>
+                                                    <td class="w-25"><input type="text" name="" value="$row['username']" hidden><?php echo $row["username"]; ?></td>
+                                                    <td class="w-25"><input type="text" name="" value="$row['phone']" hidden><?php echo $row["phone"]; ?></td>
+                                                    <td class="w-25"><input type="text" name="" value="$row['address']" hidden><?php echo $row["address"]; ?></td>
+                                                    <?php echo "  <td><input type='submit' name='deleteorder' class='btn btn-danger mx-2 my-2' value='Done'></td> "; ?>
                                                 </tr>
                                             <?php
                                                 $i++;
