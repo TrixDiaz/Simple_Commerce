@@ -92,8 +92,8 @@ if ($_GET["page"] == "products") {
             ?>
             <hr>
             <h5 class=''><?php echo $data_productname; ?></h5>
-            <span class='btn bg-info mx-2'>Price: <?php echo $data_price; ?></span>
-            <input type="button" class='btn btn-warning mx-5' data-bs-toggle="modal" data-bs-target="#staticBackdrop2" value="<?php echo 'Order' ?>"></input>
+            <span class='btn bg-info'>Price: <?php echo $data_price; ?></span>
+            <?php echo "<input type='button' href='products.php?page=detail&id=$data_id' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#staticBackdrop2'  value='Order'/>"; ?> 
             <hr>
             <p><?php echo $data_description; ?></p>
           </div>
