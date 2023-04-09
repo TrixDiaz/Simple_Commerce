@@ -124,16 +124,16 @@ if ($_GET["page"] == "products") {
                     echo "<img src='./assets/image/$data_img' class='gallery-item' alt='Grooming' style='width:100%' height='200px'>"
                     ?>
                     <hr>
-                    <h4 class='my-2' name="product_name" value="<?php echo $data_productname; ?>"><?php echo $data_productname; ?></h4>
-                    <span class='btn bg-info mx-2 my-2' name="product_price" value="<?php echo $data_price; ?>">Price: <?php echo $data_price; ?></span>
+                    <h4 class='my-2'><input type="text" name="product_name" value="<?php echo $data_productname; ?>" hidden><?php echo $data_productname; ?></h4>
+                    <span class='btn bg-info mx-2 my-2'><input type="text" name="product_price" value="<?php echo $data_price; ?>" hidden> Price: <?php echo $data_price; ?></span>
                     <br>
-                    <p class="my-2" name="product_description" value="<?php echo $data_description; ?>"><?php echo $data_description; ?></p>
+                    <p class="my-2"><input type="text" name="product_description" value="<?php echo $data_description; ?>" hidden> <?php echo $data_description; ?></p>
                     <span>Name:</span>
-                    <input type="text" name="username" class="form-control rounded my-2">
+                    <input type="text" name="username" class="form-control rounded my-2" required>
                     <span>Phone:</span>
-                    <input type="text" name="phone" class="form-control rounded my-2">
+                    <input type="text" name="phone" class="form-control rounded my-2" required>
                     <span>Address:</span>
-                    <input type="text" name="address" class="form-control rounded my-2">
+                    <input type="text" name="address" class="form-control rounded my-2" required>
                     <hr>
                   </div>
                 </div>

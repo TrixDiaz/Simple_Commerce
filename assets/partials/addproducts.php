@@ -52,7 +52,7 @@ if (isset($_POST["order"])) {
 
 	$name = mysqli_real_escape_string($connection, $_POST['product_name']);
 	$description = mysqli_real_escape_string($connection, $_POST['product_description']);
-	$price = mysqli_real_escape_string($connection, $_POST['price']);
+	$price = mysqli_real_escape_string($connection, $_POST['product_price']);
 	$username = mysqli_real_escape_string($connection, $_POST['username']);
 	$phone = mysqli_real_escape_string($connection, $_POST['phone']);
 	$address = mysqli_real_escape_string($connection, $_POST['address']);
