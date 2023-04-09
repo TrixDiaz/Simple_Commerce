@@ -93,7 +93,7 @@ if ($_GET["page"] == "products") {
             <hr>
             <h5 class=''><?php echo $data_productname; ?></h5>
             <span class='btn bg-info'>Price: <?php echo $data_price; ?></span>
-            <?php echo "<input type='button' href='products.php?page=detail&id=$data_id' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#staticBackdrop2'  value='Order'/>"; ?> 
+            <?php echo "<input type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#staticBackdrop2$data_id'  value='Order'/>"; ?>
             <hr>
             <p><?php echo $data_description; ?></p>
           </div>
@@ -102,44 +102,47 @@ if ($_GET["page"] == "products") {
 
 
       <!-- Modal -->
-      <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">Order Form </h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <?php
-              ?>
+      <?php echo "<div class='modal fade' id='staticBackdrop2$data_id' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'> " ?>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Order Form </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <?php
+          
+           
+           
+            ?>
 
-              <form method="POST" action="../assets/partials/addproducts.php">
-                <div class="container mt-5 overflow-auto">
-                  <div class=' mt-3 Grooming'>
-                    <div class='content'>
-                      <?php
-                      echo "<img src='./assets/image/$data_img' class='gallery-item' alt='Grooming' style='width:100%' height='200px'>"
-                      ?>
-                      <hr>
-                      <h4 class='my-2'><?php echo $data_productname; ?></h4>
-                      <span class='btn bg-info mx-2 my-2'>Price: <?php echo $data_price; ?></span>
-                      <br>
-                      <p class="my-2"><?php echo $data_description; ?></p>
-                      <span>Name:</span>
-                      <input type="text" name="username" class="form-control rounded my-2">
-                      <hr>
-                    </div>
+            <form method="POST" action="../assets/partials/addproducts.php">
+              <div class="container mt-5 overflow-auto">
+                <div class=' mt-3 Grooming'>
+                  <div class='content'>
+                    <?php
+                    echo "<img src='./assets/image/$data_img' class='gallery-item' alt='Grooming' style='width:100%' height='200px'>"
+                    ?>
+                    <hr>
+                    <h4 class='my-2'><?php echo $data_productname; ?></h4>
+                    <span class='btn bg-info mx-2 my-2'>Price: <?php echo $data_price; ?></span>
+                    <br>
+                    <p class="my-2"><?php echo $data_description; ?></p>
+                    <span>Name:</span>
+                    <input type="text" name="username" class="form-control rounded my-2">
+                    <hr>
                   </div>
                 </div>
-              </form>
-              <?php
-              ?>
-              <div class="d-flex justify-content-end container">
-                <input type="submit" class="btn btn-success">
               </div>
+            </form>
+            <?php
+            ?>
+            <div class="d-flex justify-content-end container">
+              <input type="submit" class="btn btn-success">
             </div>
           </div>
         </div>
+      </div>
       </div>
 
 <?php
