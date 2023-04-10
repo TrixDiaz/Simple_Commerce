@@ -59,23 +59,21 @@ include '../assets/partials/_urlName.php';
         die("Database Selection Failed" . mysqli_error($connection));
     }
 
-
+    $result = mysqli_query($connection, "SELECT * FROM orders ORDER BY id DESC ");
+    if (mysqli_num_rows($result) > 0) {
+       
     ?>
 
 
-    <section id="add-admin">
-        <div class="container-fluid">
-            <div class="container mg-5" id="signupForm">
-                <form action="../assets/partials/addproducts.php" method="POST">
-                    <div class="card shadow mb-3 py-3">
-                        <div class="card-body mx-5 py-5">
-                            <div class="d-flex justify-content-around mb-3 overflow-auto" style='max-width: auto; max-height: 65vh;'>
-                                <div class="container mt-3 ">
-                                    <h2 class="mb-4">Customer Order's</h2>
-                                    <?php
-                                    $result = mysqli_query($connection, "SELECT * FROM orders ORDER BY id DESC ");
-                                    if (mysqli_num_rows($result) > 0) {
-                                    ?>
+            <section id="add-admin">
+                <div class="container-fluid">
+                    <div class="container mg-5" id="signupForm">
+
+                        <div class="card shadow mb-3 py-3">
+                            <div class="card-body mx-5 py-5">
+                                <div class="d-flex justify-content-around mb-3 overflow-auto" style='max-width: auto; max-height: 65vh;'>
+                                    <div class="container mt-3 ">
+                                        <h2 class="mb-4">Customer Order's</h2>
                                         <table class="table table-striped table-border table-hover">
                                             <tr>
                                                 <td>Product Name</td>
@@ -86,41 +84,48 @@ include '../assets/partials/_urlName.php';
                                                 <td>Address</td>
                                                 <td>Option</td>
                                             </tr>
+                                            
                                             <?php
+                                        while ($row = mysqli_fetch_array($result)) {
+                                            $id = $row['id'];
+                                            echo "<form action='../assets/partials/addproducts.php?id=$id' method='POST'>";  ?>
+                                            <?php
+
                                             $i = 0;
-                                            while ($row = mysqli_fetch_array($result)) {
-                                            ?>
-                                                <tr>
-                                                    <input type="text" name="<?php echo $id = $row["id"]; ?>" hidden>
-                                                    <td class="w-25"><input type="text" name="" value="$row['product_name']" hidden><?php echo $row["product_name"]; ?></td>
-                                                    <td class="w-25"><input type="text" name="" value="$row['product_price']" hidden><?php echo $row["product_price"]; ?></td>
-                                                    <td class="w-25"><input type="text" name="" value="$row['product_description']" hidden><?php echo $row["product_description"]; ?></td>
-                                                    <td class="w-25"><input type="text" name="" value="$row['username']" hidden><?php echo $row["username"]; ?></td>
-                                                    <td class="w-25"><input type="text" name="" value="$row['phone']" hidden><?php echo $row["phone"]; ?></td>
-                                                    <td class="w-25"><input type="text" name="" value="$row['address']" hidden><?php echo $row["address"]; ?></td>
-                                                <?php echo " <form action='../assets/partials/addproducts.php?id=$id' method='POST'> "; ?>
-                                                    <?php echo "  <td><input type='submit' name='deleteorder' class='btn btn-danger mx-2 my-2' value='Done'></td> "; ?>
-                                                    </form>
-                                                </tr>
-                                            <?php
-                                                $i++;
-                                            }
 
                                             ?>
+                                            <tr>
+                                                <input type="text" name="<?php echo $row["id"]; ?>" hidden>
+                                                <td class="w-25"><input type="text" name="" value="$row['product_name']" hidden><?php echo $row["product_name"]; ?></td>
+                                                <td class="w-25"><input type="text" name="" value="$row['product_price']" hidden><?php echo $row["product_price"]; ?></td>
+                                                <td class="w-25"><input type="text" name="" value="$row['product_description']" hidden><?php echo $row["product_description"]; ?></td>
+                                                <td class="w-25"><input type="text" name="" value="$row['username']" hidden><?php echo $row["username"]; ?></td>
+                                                <td class="w-25"><input type="text" name="" value="$row['phone']" hidden><?php echo $row["phone"]; ?></td>
+                                                <td class="w-25"><input type="text" name="" value="$row['address']" hidden><?php echo $row["address"]; ?></td>
+                                                <?php echo "  <td><input type='submit' name='deleteorder' class='btn btn-danger mx-2 my-2' value='Done'></td> "; ?>
+
+                                            </tr>
+                                        <?php
+                                        $i++;
+                                    }
+
+                                        ?>
                                         </table>
                                     <?php
-                                    } else {
-                                        echo "<h4> No Record's Found </h4>";
-                                    }
+                                } else {
+                                    echo "<div class='container'>
+                                        <h4> No Record's Found </h4>        
+                                    </div>";
+                                }
                                     ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        </form>
                     </div>
-                </form>
-            </div>
-        </div>
-    </section>
+                </div>
+            </section>
 </div>
 
 <!-- sidebar end div  -->
